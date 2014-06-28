@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script src="//use.typekit.net/tgn6ybr.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+	<meta name="description" content="A capsule collection of French-made men's luxury accessories. Shop our products without the typical retail markup.">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= render 'layouts/header' %>
+<%= yield %>
+<%= render 'layouts/footer' %>
+<div class="cover-fade"></div>
+<div class="subscribe-box">
+	<div><input type="text" name="firstname" placeholder="First Name"></div><br>
+	<div><input type="text" name="lastname" placeholder="Last Name"></div><br>
+	<div><input type="email" placeholder="Email Address"></div><br>
+	<div><input type="submit" value="Subscribe"></div>
+</div>
+</body>
+</html>

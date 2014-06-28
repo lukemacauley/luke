@@ -1,0 +1,411 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html {
+	font-size: 10px;
+	height: 100%;
+}
+
+body {
+	position: relative;
+	background-color: #1d1d1d;
+	color: #fffeec;
+	font-family: "proxima-nova",serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.4em; // 1.4em = 14px;
+	line-height: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1 {
+	font-size: 15px;
+}
+
+ul {
+	list-style-type: none;
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+a {
+	text-decoration: none;
+	color: #fffeec;
+}
+
+.pages {
+	max-width: 550px;
+	margin: 0 auto;
+	padding: 72px 0 22px;
+	p {
+		-webkit-margin-before: 25px;
+		-webkit-margin-after: 25px;
+		font-weight: 100;
+		font-size: 12px;
+		letter-spacing: 1px;
+	}
+}
+
+header {
+	// display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #2b2b2b;
+	font-weight: 600;
+	z-index: 10;
+	ul {
+		position: relative;
+		top: 2px;
+		li {
+			display: inline-block;
+			margin: 15px 25px;
+		}
+	}
+	ul.left {
+		position: absolute;
+		top: 3px;
+		left: 0;
+		margin-left: 75px;
+	}
+	ul.center {
+		text-align: center;
+		width: 30%;
+		margin-left: auto;
+		margin-right: auto;
+		.logo {
+			height: 20px;
+		}
+	}
+	ul.right {
+		position: absolute;
+		top: 3px;
+		right: 0;
+		margin-right: 75px;
+	}
+}
+
+#footer {
+	// display: none;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	background-color: #0f0f0f;
+	// border-top: 2px solid #fffeec;
+	text-align: center;
+	z-index: 10;
+	ul {
+		li {
+			display: inline-block;
+			padding-left: 25px;
+			padding-right: 25px;
+			a {
+				font-size: 11px;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.tails {
+  display: none;
+}
+.coin {
+	display: inline-block;
+}
+.coin:hover .tails {
+    display: inline-block;
+}
+.coin:hover .heads {
+    display: none;
+}
+
+.collection {
+	height: 100%;
+	// margin-left: auto;
+	// margin-right: auto;
+	text-align: center;
+	margin-top: 56px;
+	.image-container {
+		height: 100%;
+		display: inline;
+		img {
+			height: calc(100% - 78px);
+			// opacity: 1;
+			// -webkit-transition-duration: 300ms;
+			// -o-transition-duration: 300ms;
+			// transition-duration: 300ms;
+			// &:hover {
+			// 	opacity: 0.5;
+			// }
+		}
+	}
+}
+
+.product-container {
+	height: 100%;
+	margin-top: 56px;
+	.product-details {
+		background-color: #1d1d1d;
+		width: 300px;
+		position: fixed;
+		top: 150px;
+		left: 25px;
+		text-align: center;
+		h1 {
+			margin: 0;
+			font-weight: 600;
+			font-size: 15px;
+		}
+		.description {
+			margin: 25px 0;
+			font-weight: 100;
+			font-size: 12px;
+		}
+		.product_link {
+			font-weight: 100;
+			font-size: 12px;
+		}
+		ul.share-links {
+			position: relative;
+			bottom: 15px;
+			display: none;
+			li {
+				display: inline-block;
+				margin: 0 5px;
+				.facebook-link, .twitter-link, .pinterest-link {
+					img {
+						height: 16px;
+					}
+				}
+			}
+		}
+		.added {
+			display: none;
+			font-weight: 300;
+			position: relative;
+			bottom: 11px;
+		}
+		.add-to-bag, .checkout {
+			font-family: "proxima-nova",sans-serif;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 15px;
+			width: 100%;
+			outline: 0;
+			background-color: #1d1d1d;
+			color: #fffeec;
+			text-transform: uppercase;
+			padding: 9px 0;
+			border: 2px solid #fffeec;
+			margin-bottom: 25px;
+			letter-spacing: 1px;
+			cursor: pointer;
+			-webkit-transition-duration: 300ms;
+			-moz-transition-duration: 300ms;
+			-ms-transition-duration: 300ms;
+			-o-transition-duration: 300ms;
+			transition-duration: 300ms;
+		}
+		.checkout {
+			display: none;
+			background-color: #fffeec;
+			color: #1d1d1d;
+			border: 2px solid #fffeec;
+		}
+	}
+	.image-container {
+		height: 100%;
+		&:last-child {
+			margin-bottom: 20px;
+		}
+		img {
+			display: block;
+			margin: 2px auto;
+			height: calc(100% - 78px);
+			cursor: -webkit-zoom-in; 
+			cursor: -moz-zoom-in;
+		}
+	}
+}
+
+.xl-container {
+	position: absolute;
+	top: -56px;
+	width: 100%;
+	display: none;
+	background-color: #fffeec;
+	z-index: 100;
+	cursor: -webkit-zoom-out; 
+	cursor: -moz-zoom-out;
+	img {
+		width: 100%;
+	}
+}
+
+#masonry-container {
+	margin: 83px auto 0px;
+	position: relative;
+	font-weight: 100;
+	background-color: #1d1d1d;
+	.item-container {
+		display: block;
+		margin: 0 auto;
+		.item {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 500px;
+			margin: 2px;
+			overflow: hidden;
+			.first-container {
+				font-weight: 100;
+				font-size: 12px;
+				a {
+					opacity: 1;
+					position: static;
+					&:hover {
+						opacity: 1;
+					}
+				}
+			}
+			a {
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				-webkit-transition-duration: 200ms;
+					-o-transition-duration: 200ms;
+					transition-duration: 200ms;
+				.item-overlay {
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					top: 0;
+					left: 0;
+					background-color: rgba(29,29,29,0.95);
+					.social-text {
+						position: absolute;
+						font-weight: 100;
+						top: 50%;
+						width: 420px;
+						margin: 0 40px;
+						font-size: 12px;
+						text-align: center;
+						z-index: 120;
+					}
+				}
+			}
+			img {
+				max-width: 500px;
+				display: block;
+				margin: 0 auto;
+			}
+			&:nth-last-child(2), &:last-child {
+				margin-bottom: 45px;
+			}
+			&:first-child {
+			  background-color: #1d1d1d;
+				p {
+					-webkit-margin-before: 0em;
+					-webkit-margin-after: 0em;
+					padding: 25px 50px;
+					font-size: 13px;
+					text-align: center;
+				}
+				.twitter {
+					margin-left: -32.5px;
+				}
+				.twitter, .instagram {
+					position: relative;
+					left: 50%;
+					height: 20px;
+					margin-top: -4px;
+					margin-bottom: 25px;
+					margin-right: 25px;
+					float: left;
+				}
+			}
+		}
+	}
+}
+
+.cover-fade {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #1d1d1d;
+	opacity: 0.8;
+	z-index: 11;
+}
+
+.subscribe-box {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	height: 324px;
+	width: 750px;
+	margin-left: -375px;
+	margin-top: -232px;
+	background-color: #1d1d1d;
+	border: 2px solid #fffeec;
+	z-index: 12;
+	-webkit-transition-duration: 200ms;
+	-o-transition-duration: 200ms;
+	transition-duration: 200ms;
+	padding: 20px;
+	h1 {
+		text-align: center;
+		margin: 25px 0;
+	}
+	div {
+		margin: 15px auto;
+		padding: 0;
+		width: 300px;
+		height: 20px;
+		input {
+			width: 300px;
+			height: 40px;
+			text-align: center;
+			outline: none;
+			border: none;
+			padding: 0;
+			margin: 15px 0;
+			background-color: #fffeec;
+			color: #1d1d1d;
+			font-size: 12px;
+			text-transform: uppercase;
+			&::-webkit-input-placeholder {
+				color: #1d1d1d;
+			}
+			&[type="submit"] {
+				padding: 0;
+				border: 2px solid #fffeec;
+				color: #fffeec;
+				background-color: #1d1d1d;
+				font-weight: 600;
+				font-size: 15px;
+				letter-spacing: 1px;
+				padding: 9px 0;
+				margin-top: 25px;
+				margin-bottom: 25px;
+				width: 300px;
+
+			}
+		}
+	}
+}
