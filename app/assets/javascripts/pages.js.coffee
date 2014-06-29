@@ -6,6 +6,8 @@ ready = ->
 
 	$(".social-text").flexVerticalCenter()
 
+	document.getElementById("#masonry-container").style.removeAttribute "filter"
+
 	$("#masonry-container").imagesLoaded ->
   	$("#masonry-container").masonry
 	    itemSelector: ".item"

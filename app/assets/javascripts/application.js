@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require transit
+//= require verticalalign
 //= require imagesloaded
 //= require masonry
-//= require verticalalign
 //= require turbolinks
 //= require_tree .
