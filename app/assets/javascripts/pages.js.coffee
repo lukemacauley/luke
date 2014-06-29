@@ -4,6 +4,8 @@
 
 ready = ->
 
+	$(".social-text, .product-text, #collection-container").flexVerticalCenter()
+
 	$("#masonry-container").imagesLoaded ->
   	$("#masonry-container").masonry
 	    itemSelector: ".item"
@@ -14,8 +16,6 @@ ready = ->
 
   $(".item").slice(1).mouseleave ->
     $(this).find("a").css("opacity" : "0")
-
-  $(".social-text, .product-text, #collection-container").flexVerticalCenter()
 
 	$(".image-container img").click ->
 		$(".xl-container").fadeIn(200)
