@@ -2,9 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-ready = ->
+$(".social-text").flexVerticalCenter()
 
-	$(".social-text, .product-text, #collection-container").flexVerticalCenter()
+ready = ->
 
 	$("#masonry-container").imagesLoaded ->
   	$("#masonry-container").masonry
