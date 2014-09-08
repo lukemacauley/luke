@@ -26,6 +26,6 @@ class PagesController < ApplicationController
   def bag
   end
 
-  def the_brand
+  def our_story
   end
 end

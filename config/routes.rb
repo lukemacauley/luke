@@ -20,7 +20,7 @@ Luke::Application.routes.draw do
   get "social" => "pages#social"
   get "account" => "pages#account"
   get "bag" => "pages#bag"
-  get "the-brand" => "pages#the_brand", as: 'thebrand'
+  get "our-story" => "pages#our_story", as: 'ourstory'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

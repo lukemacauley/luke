@@ -29,9 +29,13 @@ ready = ->
 		$(".cover-fade").fadeIn(200)
 		$(".subscribe-box").show().transition y: "30px"
 
-	$(".cover-fade").click ->
+	$(".insta-link").click ->
+		$(".cover-fade").fadeIn(200)
+		$(".insta-overlay").show().transition y: "30px"
+
+	$(".cover-fade, .insta-exit").click ->
 		$(".cover-fade").fadeOut(200)
-		$(".subscribe-box").hide().transition y: "0px"
+		$(".subscribe-box, .insta-overlay").hide().transition y: "0px"
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
