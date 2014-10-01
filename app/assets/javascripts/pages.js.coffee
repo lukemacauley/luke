@@ -18,24 +18,34 @@ ready = ->
     $(this).find("a").css("opacity" : "0")
 
 	$(".image-container img").click ->
-		$(".xl-container").fadeIn(200)
-		window.scrollTo 0, 350
+		$(".xl-container").fadeIn(200) if $(window).width() > 600
+		window.scrollTo 0, 350 if $(window).width() > 600
 
 	$(".xl-container img").click ->
 		$(".xl-container").fadeOut(200)
 		window.scrollTo 0, 0
 
 	$(".subscribe-link").click ->
-		$(".cover-fade").fadeIn(200)
-		$(".subscribe-box").show().transition y: "30px"
+		$(".cover-fade").show() if $(window).width() > 600
+		$(".subscribe-box").show()
+		$(".menu").hide()
 
 	$(".insta-link").click ->
-		$(".cover-fade").fadeIn(200)
-		$(".insta-overlay").show().transition y: "30px"
+		$(".cover-fade").show() if $(window).width() > 600
+		$(".insta-overlay").show()
 
-	$(".cover-fade, .insta-exit").click ->
-		$(".cover-fade").fadeOut(200)
-		$(".subscribe-box, .insta-overlay").hide().transition y: "0px"
+	$(".cover-fade, .insta-exit, .subscribe-exit").click ->
+		$(".cover-fade").hide()
+		$(".subscribe-box, .insta-overlay").hide()
+		$(".menu").show()
+
+	$(".menu").click ->
+  	$(".mobile_nav, .mobile_nav_links").show()
+  	$(".menu").hide()
+
+  $(".close, .mobile-nav-exit").click ->
+  	$(".mobile_nav").hide()
+  	$(".menu").show()
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

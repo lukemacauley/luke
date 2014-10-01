@@ -1,0 +1,18 @@
+<section class="mobile_nav">
+	<%= link_to image_tag("cross.svg", class: "mobile-nav-exit"), "javascript:void(0)" %>
+	<ul>
+		<!-- <li><%= link_to "Close", 'javascript:void(0)', class: "mobile_nav_links close" %></li>
+		<li></li> -->
+		<!-- <li><%= link_to "Shop", root_path, class: "mobile_nav_links" %></li> -->
+		<li><%= link_to "Shop Cardholder", product_path, class: "mobile_nav_links" %></li>
+		<li><%= link_to "Shop Wallet", product_path, class: "mobile_nav_links" %></li>
+		<li></li>
+		<li></li>
+		<li><%= link_to "Bag: 0", bag_path, class: "mobile_nav_links" %></li>
+		<li><%= link_to "Account", account_path, class: "mobile_nav_links" %></li>
+		<li></li>
+		<li></li>
+		<li><%= link_to 'Our Story', ourstory_path, class: "mobile_nav_links" %></li>
+		<!-- <li><%= link_to 'Social', social_path, class: "mobile_nav_links" %></li> -->
+	</ul>
+</section>
