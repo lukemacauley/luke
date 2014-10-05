@@ -3,17 +3,17 @@
 <div class="bag">
 	<h1>Shopping Bag</h1>
 	<div class="product">
-		<div class="img"><%= image_tag("p1-cart.jpg") %></div>
+		<div class="img"><%= image_tag("p1-xl.jpg") %></div>
 		<div class="name">Wallet</div>
-		<div class="qty"></div>
 		<div class="price">$500.00</div>
+		<div class="qty"><input type="number" min="1" max="10" value="1"></div>
 	</div>
 	<div class="product">
-		<div class="img"><%= image_tag("p1-cart.jpg") %></div>
+		<div class="img"><%= image_tag("p1-xl.jpg") %></div>
 		<div class="name">Wallet</div>
-		<div class="qty"></div>
 		<div class="price">$500.00</div>
+		<div class="qty"><input type="number" min="1" max="10" value="1"></div>
 	</div>
 	<div class="subtotal">Subtotal <span>$500.00</span></div>
-	<button class="checkout-button">Checkout</button>
+	<input type="submit" value="Checkout" class="checkout-button">
 </div>

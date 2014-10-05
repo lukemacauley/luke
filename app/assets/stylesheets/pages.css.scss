@@ -53,10 +53,72 @@ a {
 	}
 }
 
+input {
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	outline: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 5px;
+	background-color: #fffeec;
+	color: #1d1d1d;
+	font-size: 11px;
+	text-transform: uppercase;
+	border-radius: 0;
+	&::-webkit-input-placeholder {
+		color: #1d1d1d;
+	}
+	&[type="submit"] {
+		padding: 0;
+		border: 1px solid #fffeec;
+		color: #fffeec;
+		background-color: #1d1d1d;
+		font-weight: 100;
+		font-size: 14px;
+		letter-spacing: 1px;
+		padding: 9px 0;
+		margin-top: 25px;
+		width: 100%;
+	}
+}
+
+.account {
+	max-width: 1024px;
+	margin: 0 auto;
+	.left, .right {
+		padding: 20px;
+		width: calc(50% - 40px);
+		float: left;
+		h1 {
+			margin-bottom: 25px;
+		}
+	}
+	.left {
+		margin: 72px 0;
+		input {
+			width: calc(50% - 3px);
+			&[type="submit"] {
+				width: 100%;
+			}
+		}
+	}
+	.right {
+		margin: 72px 0;
+		input {
+			width: 100%;
+			&[type="submit"] {
+				width: 100%;
+			}
+		}
+	}
+}
+
 .bag {
 	padding: 72px 0 22px;
 	text-align: center;
-	width: 700px;
+	max-width: 700px;
 	height: 100%;
 	margin: 0 auto;
 	h1 {
@@ -69,27 +131,35 @@ a {
 		border-bottom: 1px solid #fffeec;
 		height: 175px;
 		.img {
-			width: 25%;
+			height: 175px;
 			display: inline-block;
 			float: left;
-			height: 175px;
 			img {
-				width: 100%;
+				height: 100%;
 				margin: 0;
 				padding: 0;
 			}
 		}
-		.name, .price {
+		.name {
 			width: 25%;
 			display: inline-block;
 			float: left;
-			height: 10%;
-			padding: 11% 0;
+			padding-top: 70px;
 		}
 		.qty {
 			width: 25%;
 			display: inline-block;
-			float: left;
+			input[type="number"] {
+				font-size: 14px;
+				width: 80px;
+				margin: 60px auto 0;
+			}
+		}
+		.price {
+			width: 25%;
+			display: inline-block;
+			float: right;
+			padding-top: 70px;
 		}
 	}
 	.subtotal	{
@@ -99,20 +169,8 @@ a {
 		}
 	}
 	.checkout-button {
-		font-family: "proxima-nova",sans-serif;
-		font-style: normal;
-		font-weight: 100;
-		font-size: 14px;
-		width: 300px;
-		outline: 0;
-		background-color: #1d1d1d;
-		color: #fffeec;
-		text-transform: uppercase;
-		padding: 9px 0;
-		margin-bottom: 32px;
-		border: 1px solid #fffeec;
-		letter-spacing: 1px;
-		cursor: pointer;
+		margin-top: 0px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -168,6 +226,7 @@ header {
 #footer {
 	// display: none;
 	position: fixed;
+	// height: 26px;
 	width: 100%;
 	bottom: 0;
 	left: 0;
@@ -185,6 +244,17 @@ header {
 			}
 		}
 	}
+}
+
+.social-container {
+	position: relative;
+	// display: inline-block;
+	bottom: 70px;
+	// right: 300px;
+	width: 200px;
+	height: 50px;
+	background-color: #1d1d1d;
+	border: 1px solid #fffeec;
 }
 
 .tails {
@@ -525,7 +595,7 @@ header {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	height: 350px;
+	// height: 350px;
 	width: 400px;
 	margin-left: -182px;
 	margin-top: -232px;
@@ -542,8 +612,9 @@ header {
 		top: 15px;
 		right: 15px;
 	}
-	p {
+	h1 {
 		text-align: center;
+		margin-bottom: 25px;
 	}
 	div {
 		margin: 15px auto;
@@ -576,7 +647,6 @@ header {
 				padding: 9px 0;
 				margin-top: 25px;
 				width: 300px;
-
 			}
 		}
 	}
@@ -627,7 +697,7 @@ header {
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
 
 	header {
 		height: 56px;
@@ -643,12 +713,12 @@ header {
 			display: none;
 		}
 		ul.center {
-			text-align: left;
-			width: 100%;
-			margin-left: 20px;
-			margin-top: 20px;
+			// text-align: left;
+			// width: 100%;
+			// margin-left: 20px;
+			margin-top: 18px;
 			.logo {
-				height: 16px;
+				height: 20px;
 			}
 		}
 		ul.right {
@@ -665,6 +735,129 @@ header {
 			.menu-button {
 				height: 16px;
 			}
+		}
+	}
+
+	.product-container .image-container-2 {
+		text-align: center;
+		padding: 0;
+		margin: 0 auto;
+		position: relative;
+		left: 163px;
+	}
+
+
+}
+
+@media (max-width: 768px) {
+
+	.bag {
+		padding: 72px 0 22px;
+		text-align: center;
+		max-width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		h1 {
+			border-bottom: 1px solid #fffeec;
+			padding-bottom: 30px;
+			margin-bottom: 0;
+		}
+		.product {
+			width: auto;
+			border-bottom: 1px solid #fffeec;
+			height: 175px;
+			.img {
+				height: 175px;
+				display: inline-block;
+				float: left;
+				img {
+					height: 100%;
+					margin: 0;
+					padding: 0;
+				}
+			}
+			.name {
+				width: 63%;
+				display: block;
+				float: left;
+				position: relative;
+				padding-top: 40px;
+				// left: 0px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			.qty {
+				width: 63%;
+				display: block;
+				float: left;
+				position: relative;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				input[type="number"] {
+					font-size: 14px;
+					width: 80px;
+					margin: 5px auto 0;
+				}
+			}
+			.price {
+				width: 63%;
+				display: block;
+				float: left;
+				position: relative;
+				padding-top:  0px;
+				// right: 37px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+		}
+		.checkout-button {
+			width: calc(100% - 40px);
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+	}
+
+	.account {
+		max-width: 100%;
+		width: 100%;
+		margin: 0 auto;
+		background-color: #1D1D1D;
+		.left, .right {
+			padding: 20px;
+			width: calc(100% - 40px);
+			float: none;
+			h1 {
+				margin-bottom: 25px;
+				text-align: center;
+			}
+			input {
+				width: 100%;
+			}
+		}
+		.left {
+		}
+		.right {
+			margin-top: -72px;
+			margin-bottom: 36px;
+			input {
+				width: 100%;
+				&[type="submit"] {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	header ul.center {
+		text-align: left;
+		width: 100%;
+		margin-left: 20px;
+		margin-top: 20px;
+		.logo {
+			height: 16px;
 		}
 	}
 
@@ -705,9 +898,17 @@ header {
 		margin: 0 20px;
 		padding: 72px 0 0px;
 		margin-bottom: -5px;
+		h1 {
+			text-align: center;
+		}
 		img {
-			max-width: calc(100% + 40px);
-			margin-left: -20px;
+			// max-width: calc(100% + 40px);
+			width: calc(100% + 40px);
+			position: relative;
+			left: -20px;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
 
@@ -730,21 +931,17 @@ header {
 			right: 0px;
 			padding: 20px;
 		}
-		p {
+		h1 {
 			padding-top: 60px;
+			text-align: center;
+			margin-bottom: 25px;
 		}
-		div {
-			padding: 0;
-			width: 80%;
-			input {
-				width: 100%;
-				-webkit-appearance: none;
-    		border-radius: 0;
-				&[type="submit"] {
-					width: 100%;
-
-				}
-			}
+		input {
+			width: calc(100% - 40px);
+			margin-left: 20px;
+			margin-right: 20px;
+			-webkit-appearance: none;
+  		border-radius: 0;
 		}
 	}
 
@@ -928,6 +1125,9 @@ header {
 		.image-container-2 {
 			text-align: center;
 			padding: 0;
+			margin: 0;
+			position: static;
+			left: 0;
 			&:last-child .image-container img {
 				margin-bottom: 20px;
 			}
