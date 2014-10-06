@@ -7,11 +7,23 @@
 		<li><%= link_to "Legal", legal_path %></li>
 		<li><%= link_to "Follow Us", 'javascript:void(0)', class: "follow-link" %></li>
 	</ul>
-</footer><!-- 
-<div class="social-container"></div> -->
-<!-- <footer id="mobile_footer">
-	<ul>
-		<li><%= link_to image_tag("lm_logo.svg", alt: "LUKE MACAULEY", class: "logo"), root_path %></li>
-		<li><%= link_to image_tag("menu.svg", alt: "LUKE MACAULEY", class: "menu"), 'javascript:void(0)' %></li>
-	</ul>
-</footer> -->
+</footer>
+
+<div class="cover-fade"></div>
+
+<div class="subscribe-box">
+	<h1>Subscribe to LUKE MACAULEY</h1>
+	<%= link_to image_tag("cross.svg", class: "subscribe-exit"), "javascript:void(0)" %>
+	<input type="text" name="firstname" placeholder="First Name">
+	<input type="text" name="lastname" placeholder="Last Name">
+	<input type="email" placeholder="Email Address">
+	<input type="submit" value="Subscribe">
+</div>
+
+<div class="social-box">
+	<h1>Follow LUKE MACAULEY</h1>
+	<%= link_to image_tag("cross.svg", class: "social-exit"), "javascript:void(0)" %>
+	<%= link_to image_tag("facebook.svg", class: "facebook-logo"), "http://www.facebook.com/lukemacauley", target: '_blank' %>
+	<%= link_to image_tag("twitter.svg", class: "twitter-logo"), "http://www.twitter.com/lukemacauley", target: '_blank' %>
+	<%= link_to image_tag("instagram.svg", class: "instagram-logo"), "http://www.instagram.com/lukemacauley", target: '_blank' %>
+</div>

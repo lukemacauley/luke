@@ -595,10 +595,9 @@ header {
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	// height: 350px;
 	width: 400px;
-	margin-left: -182px;
-	margin-top: -232px;
+	margin-left: -221px;
+	margin-top: -250px;
 	background-color: #1d1d1d;
 	border: 1px solid #fffeec;
 	z-index: 12;
@@ -649,6 +648,37 @@ header {
 				width: 300px;
 			}
 		}
+	}
+}
+
+.social-box {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	margin-left: -221px;
+	margin-top: -250px;
+	background-color: #1d1d1d;
+	border: 1px solid #fffeec;
+	z-index: 12;
+	-webkit-transition-duration: 200ms;
+	-o-transition-duration: 200ms;
+	transition-duration: 200ms;
+	padding: 20px;
+	h1 {
+		text-align: center;
+	}
+	.social-exit {
+		height: 14px;
+		position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+	.facebook-logo, .twitter-logo, .instagram-logo {
+		margin: 35px 0 20px;
+		height: 25px;
+		width: 32.7%;
 	}
 }
 
@@ -750,6 +780,37 @@ header {
 }
 
 @media (max-width: 768px) {
+
+	.social-box {
+		display: none;
+		position: fixed;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		background-color: #1d1d1d;
+		opacity: 0.97;
+		border: 0;
+		padding: 0;
+		.social-exit {
+			height: 16px;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			padding: 20px;
+		}
+		h1 {
+			padding-top: 60px;
+			text-align: center;
+			margin-bottom: 25px;
+		}
+		.facebook-logo, .twitter-logo, .instagram-logo {
+			margin: 35px 0 20px;
+			height: 25px;
+			width: 32.5%;
+		}
+	}
 
 	.bag {
 		padding: 72px 0 22px;
@@ -867,12 +928,12 @@ header {
 		ul {
 			li {
 				display: block;
-				padding: 3px 0px;
+				padding: 6px 0px;
 				&:first-child {
-					padding-top: 12px;
+					padding-top: 24px;
 				}
 				&:last-child {
-					padding-bottom: 12px;
+					padding-bottom: 24px;
 				}
 			}
 		}

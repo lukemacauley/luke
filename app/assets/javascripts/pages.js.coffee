@@ -30,13 +30,18 @@ ready = ->
 		$(".subscribe-box").show()
 		$(".menu").hide()
 
+	$(".follow-link").click ->
+		$(".cover-fade").show() if $(window).width() > 600
+		$(".social-box").show()
+		$(".menu").hide()
+
 	$(".insta-link").click ->
 		$(".cover-fade").show() if $(window).width() > 600
 		$(".insta-overlay").show()
 
-	$(".cover-fade, .insta-exit, .subscribe-exit").click ->
+	$(".cover-fade, .insta-exit, .subscribe-exit, .social-exit").click ->
 		$(".cover-fade").hide()
-		$(".subscribe-box, .insta-overlay").hide()
+		$(".subscribe-box, .insta-overlay, .social-box").hide()
 		$(".menu").show()
 
 	$(".menu").click ->
