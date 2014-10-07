@@ -26,23 +26,33 @@ ready = ->
 		window.scrollTo 0, 0
 
 	$(".subscribe-link").click ->
-		$(".cover-fade").show() if $(window).width() > 600
+		# $(".cover-fade").show() if $(window).width() > 600
 		$(".subscribe-box").show()
 		$(".menu").hide()
 
 	$(".follow-link").click ->
-		$(".cover-fade").show() if $(window).width() > 600
+		# $(".cover-fade").show() if $(window).width() > 600
 		$(".social-box").show()
 		$(".menu").hide()
 
 	$(".insta-link").click ->
-		$(".cover-fade").show() if $(window).width() > 600
+		# $(".cover-fade").show() if $(window).width() > 600
 		$(".insta-overlay").show()
 
-	$(".cover-fade, .insta-exit, .subscribe-exit, .social-exit").click ->
+	$(".cover-fade, .insta-exit, .subscribe-exit, .social-exit, .shipping-exit").click ->
 		$(".cover-fade").hide()
-		$(".subscribe-box, .insta-overlay, .social-box").hide()
+		$(".subscribe-box, .insta-overlay, .social-box, .shipping-box").hide()
 		$(".menu").show()
+
+	$(".shipping-link").mouseenter ->
+		$(".shipping").show()
+
+	$("ul.right li:first-child, .mobile_nav_links").mouseleave ->
+		$(".shipping").hide()
+
+	$(".shipping-link").click ->
+		$(".shipping-box").show()
+		$(".mobile_nav").hide()
 
 	$(".menu").click ->
   	$(".mobile_nav, .mobile_nav_links").show()
