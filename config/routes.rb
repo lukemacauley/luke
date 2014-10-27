@@ -12,6 +12,7 @@ Luke::Application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   get "contact" => "pages#contact"
+  get "brand" => "pages#brand"
   get "delivery" => "pages#delivery"
   get "legal" => "pages#legal"
   get "product" => "pages#product"

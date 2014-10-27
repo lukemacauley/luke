@@ -17,12 +17,20 @@ ready = ->
   $(".item").slice(1).mouseleave ->
     $(this).find("a").css("opacity" : "0")
 
-	$(".image-container img").click ->
-		$(".xl-container").fadeIn(200) if $(window).width() > 600
-		window.scrollTo 0, 350 if $(window).width() > 600
+	# $(".image-container img").click ->
+	# 	$(".xl-container").show() if $(window).width() > 600
+	# 	window.scrollTo 0, 350 if $(window).width() > 600
+
+	$(".ic1 img").click ->
+		$(".xlc1").show() if $(window).width() > 600
+		window.scrollTo 0, 430 if $(window).width() > 600
+
+	$(".ic2 img").click ->
+		$(".xlc2").show() if $(window).width() > 600
+		window.scrollTo 0, 430 if $(window).width() > 600
 
 	$(".xl-container img").click ->
-		$(".xl-container").fadeOut(200)
+		$(".xl-container").hide()
 		window.scrollTo 0, 0
 
 	$(".subscribe-link").click ->

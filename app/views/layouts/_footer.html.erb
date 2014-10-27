@@ -1,6 +1,6 @@
 <footer id="footer">
 	<ul>
-		<li><%= link_to 'Contact', 'mailto:hello@lukemacauley.com?subject=Client Services' %></li>
+		<li><%= link_to 'Contact', 'mailto:clientservices@lukemacauley.com?subject=Client Services' %></li>
 		<li><%= link_to 'Subscribe', 'javascript:void(0)', class: "subscribe-link" %></li>
 		<li><%= link_to "Delivery", delivery_path %></li>
 		<li><%= link_to "Returns", returns_path %></li>
@@ -12,12 +12,52 @@
 <div class="cover-fade"></div>
 
 <div class="subscribe-box">
-	<h1>Subscribe to LUKE MACAULEY</h1>
 	<%= link_to image_tag("cross.svg", class: "subscribe-exit"), "javascript:void(0)" %>
-	<input type="text" name="firstname" placeholder="First Name">
-	<input type="text" name="lastname" placeholder="Last Name">
-	<input type="email" placeholder="Email Address">
-	<input type="submit" value="Subscribe">
+	<h1>Subscribe to LUKE MACAULEY</h1>
+	<div id="mc_subscribe_form">
+    <input type="text" placeholder="First Name" name="firstname" id="firstname"></input>
+    <input type="text" placeholder="Last Name" name="lastname" id="lastname"></input>
+    <input type="email" placeholder="Email Address" id="email"></input>
+    <input type="submit" value="Subscribe" id="subscribe_button"></input>
+  </div>
+
+  <div id="mc_thank_you" style="display:none;">
+    <i>Thank you for subscribing to our list, <span id="first_name"></span>.</i>
+  </div>
+
+  <script>
+  	jQuery(document).ready(function(){
+  		jQuery('body').on('click', '#subscribe_button', function(){ 
+  			var message = "There was a problem subscribing to the list. Please try again.";
+
+        var fname = jQuery("#firstname").val();
+        var lname = jQuery("#lastname").val();
+        var email = jQuery("#email").val();
+  
+  			jQuery.ajax({
+  				type:"GET",
+          dataType: "json",
+  				url:'mc_subscribe.php?firstname='+fname+'&lastname='+lname+'&email='+email,
+  				error:function (result) {
+            jQuery("#subscribe_msg").html(message);
+            jQuery("#subscribe_msg").fadeIn(400);
+  				},
+  				success:function (result) {
+  					if (result.response > 0) {
+              jQuery("#subscribe_msg").hide();
+              jQuery("#mc_subscribe_form").hide();
+              jQuery("#first_name").html(result.mailvars.fname);
+              jQuery("#mc_thank_you").fadeIn(200);
+  					} else {
+              jQuery("#subscribe_msg").html(message);
+              jQuery("#subscribe_msg").fadeIn(400);
+  					}
+  				}
+  			})
+  		});
+  
+  	});
+  </script>
 </div>
 
 <div class="social-box">
