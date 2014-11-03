@@ -1,6 +1,6 @@
 <footer id="footer">
 	<ul>
-		<li><%= link_to 'Contact', 'mailto:clientservices@lukemacauley.com?subject=Client Services' %></li>
+		<li><%= link_to 'Contact', contact_path %></li>
 		<li><%= link_to 'Subscribe', 'javascript:void(0)', class: "subscribe-link" %></li>
 		<li><%= link_to "Delivery", delivery_path %></li>
 		<li><%= link_to "Returns", returns_path %></li>
@@ -20,51 +20,13 @@
     <input type="email" placeholder="Email Address" id="email"></input>
     <input type="submit" value="Subscribe" id="subscribe_button"></input>
   </div>
-
-  <div id="mc_thank_you" style="display:none;">
-    <i>Thank you for subscribing to our list, <span id="first_name"></span>.</i>
-  </div>
-
-  <script>
-  	jQuery(document).ready(function(){
-  		jQuery('body').on('click', '#subscribe_button', function(){ 
-  			var message = "There was a problem subscribing to the list. Please try again.";
-
-        var fname = jQuery("#firstname").val();
-        var lname = jQuery("#lastname").val();
-        var email = jQuery("#email").val();
-  
-  			jQuery.ajax({
-  				type:"GET",
-          dataType: "json",
-  				url:'mc_subscribe.php?firstname='+fname+'&lastname='+lname+'&email='+email,
-  				error:function (result) {
-            jQuery("#subscribe_msg").html(message);
-            jQuery("#subscribe_msg").fadeIn(400);
-  				},
-  				success:function (result) {
-  					if (result.response > 0) {
-              jQuery("#subscribe_msg").hide();
-              jQuery("#mc_subscribe_form").hide();
-              jQuery("#first_name").html(result.mailvars.fname);
-              jQuery("#mc_thank_you").fadeIn(200);
-  					} else {
-              jQuery("#subscribe_msg").html(message);
-              jQuery("#subscribe_msg").fadeIn(400);
-  					}
-  				}
-  			})
-  		});
-  
-  	});
-  </script>
 </div>
 
 <div class="social-box">
 	<h1>Follow LUKE MACAULEY</h1>
 	<%= link_to image_tag("cross.svg", class: "social-exit"), "javascript:void(0)" %>
 	<div>
-		<%= link_to image_tag("facebook.svg", class: "facebook-logo"), "http://www.facebook.com", target: '_blank' %>
+		<%= link_to image_tag("facebook.svg", class: "facebook-logo"), "http://www.facebook.com/lukemacauley", target: '_blank' %>
 		<%= link_to image_tag("twitter.svg", class: "twitter-logo"), "http://www.twitter.com/lukemacauley", target: '_blank' %>
 		<%= link_to image_tag("instagram.svg", class: "instagram-logo"), "http://www.instagram.com/lukemacauley", target: '_blank' %>
 	</div>

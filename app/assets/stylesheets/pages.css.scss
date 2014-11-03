@@ -45,6 +45,9 @@ a {
 	max-width: 550px;
 	margin: 0 auto;
 	padding: 72px 0 52px;
+	h1 {
+		text-align: center;
+	}
 	p {
 		-webkit-margin-before: 25px;
 		-webkit-margin-after: 25px;
@@ -94,6 +97,7 @@ input {
 		float: left;
 		h1 {
 			margin-bottom: 25px;
+			text-align: center;
 		}
 	}
 	.left {
@@ -114,6 +118,10 @@ input {
 			}
 		}
 	}
+}
+
+.contact {
+	text-align: center;
 }
 
 .bag {
@@ -339,10 +347,11 @@ header {
 			}
 		}
 		.added {
-			display: none;
+			// display: none;
 			font-weight: 100;
 			position: relative;
 			bottom: 11px;
+			border: 1px solid #fffeec;
 		}
 		.add-to-bag, .checkout {
 			font-family: "proxima-nova",sans-serif;
@@ -366,9 +375,10 @@ header {
 			transition-duration: 300ms;
 		}
 		.checkout {
-			display: none;
+			// display: none;
 			background-color: #fffeec;
 			color: #1d1d1d;
+			font-weight: 400;
 			border: 1px solid #fffeec;
 		}
 	}
@@ -1251,7 +1261,7 @@ header {
 			}
 			.added {
 				display: none;
-				font-weight: 100;
+				font-weight: 400;
 				position: relative;
 				bottom: 11px;
 			}
@@ -1280,6 +1290,7 @@ header {
 				// display: none;
 				background-color: #fffeec;
 				color: #1d1d1d;
+				font-weight: 400;
 				border: 1px solid #fffeec;
 			}
 		}
